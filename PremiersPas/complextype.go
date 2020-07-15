@@ -44,4 +44,22 @@ func main() {
 		otherVitesses = append(otherVitesses, float32(v))
 	}
 	fmt.Printf("Slice de vitesses : %d %d\n", len(otherVitesses), cap(otherVitesses))
+
+	for i := 0; i < len(vitesses); i++ {
+		fmt.Printf("Vitesse[%d] = %g\n", i, vitesses[i])
+	}
+
+	for _, v := range vitesses {
+		fmt.Printf("Vitesse = %g\n", v)
+	}
+
+	for i, v := range vitesses {
+		fmt.Printf("Vitesse[%d] = %g\n", i, v)
+	}
+
+	texte := "Hello, 世界"
+	for i, r := range texte {
+		fmt.Printf("Char[%d] = %v\n", i, r)
+	}
+	fmt.Printf("Texte = %v %d\n", texte, len(texte))
 }
