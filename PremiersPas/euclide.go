@@ -4,11 +4,16 @@ package main
 import "fmt"
 
 func main() {
-	a := 15
-	b := 12
+	var a uint = 15
+	var b uint = 12
+	p := pgcd(a, b)
+	fmt.Printf("Le pgcd de %d et %d est %d\n", a, b, p)
+}
+
+func pgcd(a, b uint) uint {
 	for b != 0 {
 		r := a % b
 		a, b = b, r
 	}
-	fmt.Printf("Le pgcd est %v\n", a)
+	return a
 }

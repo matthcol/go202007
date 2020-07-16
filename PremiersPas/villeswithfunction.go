@@ -22,6 +22,13 @@ func main() {
 	fmt.Println("Before:", ville)
 	updatePopulation(&ville, 250001)
 	fmt.Println("After:", ville)
+
+	villes = append(villes, ville)
+	fmt.Println("before increment:", villes)
+	incrementAllPopulation(villes, 3)
+	fmt.Println("After increment:", villes)
+	incrementAllPopulation(villes[1:], 5)
+	fmt.Println("After increment [1:]:", villes)
 }
 
 func updatePopulation(pv *Ville, newPopulation uint32) {
@@ -30,5 +37,7 @@ func updatePopulation(pv *Ville, newPopulation uint32) {
 }
 
 func incrementAllPopulation(villes []Ville, increment uint32) {
-
+	for i := range villes {
+		villes[i].nbHabitant += increment
+	}
 }
