@@ -1,6 +1,6 @@
 package calcul
 
-func fibo(rank uint) uint {
+func Fibo(rank uint) uint {
 	var a uint = 0
 	var b uint = 1
 	switch rank {
